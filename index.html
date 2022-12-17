@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <title>Rock-Paper-Scissors</title>
+
+  <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      sizes="192x192"
+      href="./favicon/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      sizes="512x512"
+      href="./favicon/android-chrome-512x512.png"
+    />
+    <link rel="manifest" href="img/favicon/site.webmanifest" />
+    <script src=”https://cdn.tailwindcss.com”></script>
+</head>
+<body>
+  <header><div class="heading">
+		<h1>Choose To Win</h1>
+		<h3>
+			<span class="text-slider-items">
+				ROCK PAPER SCISSORS
+			</span>
+      <!-- <span class="text-slider-items">
+				PAPER
+			</span>
+      <span class="text-slider-items">
+				SCISSORS
+			</span> -->
+			<strong class="text-slider"></strong>
+
+		</h3>
+	</div>
+	<!-- Import typed.min.js file from typed.js folder -->
+	<script src=
+		"./typed.js-master/lib/typed.min.js">
+	</script>
+	
+	<!-- Add jquery cdn -->
+	<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+	</script>
+
+	<!-- Add this script for successful
+		implementation of typed.js -->
+	<script>
+		if ($(".text-slider").length == 1) {
+			
+			var typed_strings =
+				$(".text-slider-items").text();
+
+			var typed = new Typed(".text-slider", {
+				strings: typed_strings.split(", "),
+				typeSpeed: 50,
+				loop: true,
+				backDelay: 900,
+				backSpeed: 30,
+			});
+		}
+	</script>
+  </header>
+  
+  <div class="score-board">
+    <div id="user-badge" class="badge">COMPUTER</div>
+    <div id="cpu-badge" class="badge">YOU</div>
+    <span id="user-score">0</span>:<span id="cpu-score">0</span>
+  </div>
+  <div class="choices">
+    <div id="rock" class="choice">
+      <img src="images/rock.png" alt="">
+    </div>
+    <div id="paper" class="choice">
+      <img src="images/paper.png" alt="">
+    </div>
+    <div id="scissors" class="choice">
+      <img src="images/scissors.png" alt="">
+    </div>
+  </div>
+  <h2>Choose Wisely</h2>
+  <div class="btn-container">  
+    <button id="restart" class="restart-btn">Restart Game</button>
+  </div>
+  <!-- Modal -->
+  <div class="modal">
+    <div id="result" class="modal-content"></div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
